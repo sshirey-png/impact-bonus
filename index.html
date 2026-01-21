@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Bonus Guide | FirstLine Schools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fls-navy': '#002f60',
+                        'fls-blue': '#094aad',
+                        'fls-orange': '#e47727',
+                        'fls-orange-dark': '#c9621e',
+                        'fls-orange-light': '#f5a66d',
+                        'fls-gray': '#898989',
+                        'fls-light': '#f8f9fa'
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bonus-card { transition: all 0.3s ease; }
+        .bonus-card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-content.open { max-height: 2000px; }
+        .role-option { transition: all 0.2s ease; }
+        .role-option:hover { background-color: #fff4ed; border-color: #e47727; }
+        .role-option.selected { background-color: #e47727; color: white; border-color: #e47727; }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .tier-exceptional { background: linear-gradient(135deg, #e47727 0%, #c9621e 100%); }
+        .tier-full { background: linear-gradient(135deg, #094aad 0%, #002f60 100%); }
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+    <!-- Sticky Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-fls-navy text-white shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-fls-orange rounded-lg flex items-center justify-center font-bold text-lg">FL</div>
+                    <span class="font-semibold text-lg hidden sm:block">Impact Bonus Guide</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#find-bonus" class="hover:text-fls-orange transition-colors">Find Your Bonus</a>
+                    <a href="#eligibility" class="hover:text-fls-orange transition-colors">Eligibility</a>
+                    <a href="#assessments" class="hover:text-fls-orange transition-colors">Assessments</a>
+                    <a href="#faq" class="hover:text-fls-orange transition-colors">FAQ</a>
+                    <a href="#dates" class="hover:text-fls-orange transition-colors">Dates</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-fls-orange/20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-fls-navy border-t border-white/10">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#find-bonus" class="block py-2 hover:text-fls-orange">Find Your Bonus</a>
+                <a href="#eligibility" class="block py-2 hover:text-fls-orange">Eligibility</a>
+                <a href="#assessments" class="block py-2 hover:text-fls-orange">Assessments</a>
+                <a href="#faq" class="block py-2 hover:text-fls-orange">FAQ</a>
+                <a href="#dates" class="block py-2 hover:text-fls-orange">Dates</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-fls-navy text-white relative overflow-hidden pattern-bg">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-fls-orange/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-t from-fls-blue/30 to-transparent"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-1 bg-fls-orange/20 rounded-full text-fls-orange-light text-sm font-medium mb-4">2025-2026 School Year</div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Impact Bonus Guide</h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">Your roadmap to earning performance bonuses at FirstLine Schools</p>
+            </div>
+
+            <!-- Bonus Amounts at a Glance -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <!-- K-8 Content & SPED -->
+                <div class="bonus-card bg-white rounded-2xl p-6 text-gray-800 shadow-xl">
+                    <div class="text-fls-orange font-semibold text-sm uppercase tracking-wide mb-4">K-8 Content & SPED Teachers</div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gradient-to-r from-fls-orange/10 to-fls-orange/5 rounded-xl">
+                            <span class="font-semibold text-fls-orange">Exceptional</span>
+                            <span class="text-3xl font-bold text-fls-navy">$3,000</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gradient-to-r from-fls-blue/10 to-fls-blue/5 rounded-xl">
+                            <span class="font-semibold text-fls-blue">Full Attainment</span>
+                            <span class="text-2xl font-bold text-fls-navy">$1,500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enrichment, ESY, Pre-K -->
+                <div class="bonus-card bg-white rounded-2xl p-6 text-gray-800 shadow-xl">
+                    <div class="text-fls-orange font-semibold text-sm uppercase tracking-wide mb-4">Enrichment, ESY & Pre-K</div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gradient-to-r from-fls-orange/10 to-fls-orange/5 rounded-xl">
+                            <span class="font-semibold text-fls-orange">Exceptional</span>
+                            <span class="text-3xl font-bold text-fls-navy">$1,500</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gradient-to-r from-fls-blue/10 to-fls-blue/5 rounded-xl">
+                            <span class="font-semibold text-fls-blue">Full Attainment</span>
+                            <span class="text-2xl font-bold text-fls-navy">$750</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schoolwide Bonus -->
+                <div class="bonus-card bg-white rounded-2xl p-6 text-gray-800 shadow-xl">
+                    <div class="text-fls-orange font-semibold text-sm uppercase tracking-wide mb-4">Schoolwide Bonus</div>
+                    <div class="p-4 bg-gradient-to-r from-fls-navy/5 to-fls-navy/10 rounded-xl">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-semibold text-fls-navy">All Educators</span>
+                            <span class="text-3xl font-bold text-fls-navy">$750</span>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            Earned when school achieves <strong>3+ point SPS increase</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#find-bonus" class="inline-flex items-center px-8 py-4 bg-fls-orange hover:bg-fls-orange-dark text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    Find Your Bonus Targets
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Eligibility Overview -->
+    <section class="py-6 bg-fls-orange text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm md:text-base">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>PMAP 2.5+</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>No Unpaid Leave</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Meet Performance Targets</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Employed Dec 15</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Return Next Year</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Your Bonus Section -->
+    <section id="find-bonus" class="py-16 bg-fls-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-fls-navy mb-4">Find Your Bonus Targets</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Select your role to see your specific performance targets and potential bonus</p>
+            </div>
+
+            <!-- Role Selector -->
+            <div class="max-w-4xl mx-auto">
+                <!-- Category Selection -->
+                <div class="mb-8">
+                    <label class="block text-sm font-semibold text-fls-navy mb-3">Step 1: Select Your Category</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="categorySelector">
+                        <button onclick="selectCategory('general')" class="role-option px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-center font-medium shadow-sm" data-category="general">
+                            <div class="text-3xl mb-2">📚</div>
+                            <div class="text-fls-navy">General Ed</div>
+                        </button>
+                        <button onclick="selectCategory('sped')" class="role-option px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-center font-medium shadow-sm" data-category="sped">
+                            <div class="text-3xl mb-2">⭐</div>
+                            <div class="text-fls-navy">SPED</div>
+                        </button>
+                        <button onclick="selectCategory('enrichment')" class="role-option px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-center font-medium shadow-sm" data-category="enrichment">
+                            <div class="text-3xl mb-2">🎨</div>
+                            <div class="text-fls-navy">Enrichment</div>
+                        </button>
+                        <button onclick="selectCategory('other')" class="role-option px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-center font-medium shadow-sm" data-category="other">
+                            <div class="text-3xl mb-2">📋</div>
+                            <div class="text-fls-navy">Other Roles</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Role Selection (appears after category) -->
+                <div id="roleSelector" class="mb-8 hidden">
+                    <label class="block text-sm font-semibold text-fls-navy mb-3">Step 2: Select Your Role</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="roleOptions">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Results Display -->
+                <div id="bonusResults" class="hidden fade-in">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section id="eligibility" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-fls-navy mb-4">Eligibility Requirements</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">All requirements must be met to qualify for the Impact Bonus</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Requirements Checklist -->
+                <div class="bg-fls-light rounded-2xl p-8 border border-gray-200">
+                    <h3 class="text-xl font-bold text-fls-navy mb-6 flex items-center">
+                        <span class="w-10 h-10 bg-fls-orange text-white rounded-full flex items-center justify-center mr-3 text-lg">✓</span>
+                        Requirements Checklist
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-fls-orange rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong class="text-fls-navy">PMAP Score of 2.5 or higher</strong>
+                                    <p class="text-sm text-gray-600 mt-1">Pre-K teachers use CLASS observation scores instead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-fls-orange rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong class="text-fls-navy">No unpaid leave used</strong>
+                                    <p class="text-sm text-gray-600 mt-1">All leave must be paid leave (PTO, sick, etc.)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-fls-orange rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong class="text-fls-navy">Meet performance targets for your role</strong>
+                                    <p class="text-sm text-gray-600 mt-1">Full Attainment or Exceptional level</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-fls-orange rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong class="text-fls-navy">Employed on bonus payout day</strong>
+                                    <p class="text-sm text-gray-600 mt-1">Must be employed on or before December 15</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-fls-orange rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <strong class="text-fls-navy">Return commitment</strong>
+                                    <p class="text-sm text-gray-600 mt-1">Must remain with the network for the following school year</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PMAP & Payout Details -->
+                <div class="space-y-6">
+                    <div class="bg-fls-light rounded-2xl p-8 border border-gray-200">
+                        <h3 class="text-xl font-bold text-fls-navy mb-4 flex items-center">
+                            <span class="w-10 h-10 bg-fls-navy text-white rounded-full flex items-center justify-center mr-3 text-lg">📊</span>
+                            PMAP Requirement
+                        </h3>
+                        <p class="text-gray-700 mb-4">Your Performance Management and Assessment Plan (PMAP) score must be <strong class="text-fls-navy">2.5 or higher</strong> to qualify for any bonus tier.</p>
+                        <div class="bg-fls-orange/10 border-l-4 border-fls-orange p-4 rounded-r-lg">
+                            <p class="text-sm text-fls-navy"><strong>Pre-K Exception:</strong> Pre-K teachers are evaluated using CLASS observation scores instead of PMAP.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-fls-navy rounded-2xl p-8 text-white">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <span class="w-10 h-10 bg-fls-orange rounded-full flex items-center justify-center mr-3 text-lg">💰</span>
+                            Payout Timeline
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                                <span class="font-medium">Payout Date</span>
+                                <span class="text-fls-orange font-bold text-xl">December 15, 2026</span>
+                            </div>
+                            <p class="text-sm text-gray-300">Bonuses are paid as a lump sum on or around December 15, provided all eligibility requirements are met.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Explainers -->
+    <section id="assessments" class="py-16 bg-fls-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-fls-navy mb-4">Understanding Your Assessments</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Learn about the assessments used to measure student performance and your bonus eligibility</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- DIBELS -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-fls-orange hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fls-orange text-white rounded-xl flex items-center justify-center font-bold text-lg mr-3">D</div>
+                        <h3 class="text-xl font-bold text-fls-navy">DIBELS</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Dynamic Indicators of Basic Early Literacy Skills - measures foundational reading skills in grades K-2.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-fls-orange mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Grades:</strong> K-2</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-orange mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Measures:</strong> Letter naming, phonemic awareness, oral reading fluency</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-orange mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Key Metric:</strong> Composite benchmark & growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NWEA MAP -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-fls-blue hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fls-blue text-white rounded-xl flex items-center justify-center font-bold text-lg mr-3">M</div>
+                        <h3 class="text-xl font-bold text-fls-navy">NWEA MAP</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Measures of Academic Progress - adaptive assessment measuring growth in math for K-2 students.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-fls-blue mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Grades:</strong> K-2</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-blue mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Measures:</strong> Math skills & growth</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-blue mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Key Metrics:</strong> 50th percentile, conditional growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEAP 2025 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-fls-navy hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fls-navy text-white rounded-xl flex items-center justify-center font-bold text-lg mr-3">L</div>
+                        <h3 class="text-xl font-bold text-fls-navy">LEAP 2025</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Louisiana's state assessment measuring student achievement in ELA, Math, Science, and Social Studies.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-fls-navy mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Grades:</strong> 3-8</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-navy mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Levels:</strong> Unsatisfactory, Approaching, Mastery, Advanced</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-navy mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Key Metrics:</strong> Mastery rate, band jumps, YOY growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ELPT -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-fls-orange hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fls-orange text-white rounded-xl flex items-center justify-center font-bold text-lg mr-3">E</div>
+                        <h3 class="text-xl font-bold text-fls-navy">ELPT</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">English Language Proficiency Test - measures English language development for ELL students.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-fls-orange mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Students:</strong> English Language Learners (K-8)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-orange mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Measures:</strong> Listening, speaking, reading, writing</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-orange mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Key Metrics:</strong> Trajectory goals, domain growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLASS -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-fls-blue hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fls-blue text-white rounded-xl flex items-center justify-center font-bold text-lg mr-3">C</div>
+                        <h3 class="text-xl font-bold text-fls-navy">CLASS</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Classroom Assessment Scoring System - measures Pre-K teacher-child interaction quality.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-fls-blue mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Grades:</strong> Pre-K only</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-blue mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Scale:</strong> 1-7 (7 = highest quality)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-blue mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Targets:</strong> Full: 5.0-5.9 | Exceptional: 6.0+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEAP Connect / Unique -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-fls-navy hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fls-navy text-white rounded-xl flex items-center justify-center font-bold text-lg mr-3">U</div>
+                        <h3 class="text-xl font-bold text-fls-navy">LEAP Connect / Unique</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Alternative assessments for students with significant cognitive disabilities.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-fls-navy mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Students:</strong> SPED Discovery (cognitive disabilities)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-navy mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">LEAP Connect:</strong> Score 3+ is target</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-fls-navy mr-2 font-bold">•</span>
+                            <span><strong class="text-fls-navy">Unique:</strong> Level progression on 75% of standards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-fls-navy mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 text-lg">Find answers to common questions about the Impact Bonus</p>
+            </div>
+
+            <!-- FAQ Search -->
+            <div class="mb-8">
+                <div class="relative">
+                    <input type="text" id="faqSearch" placeholder="Search FAQ..." class="w-full px-5 py-4 pl-12 border-2 border-gray-200 rounded-xl focus:border-fls-orange focus:outline-none text-lg bg-fls-light" oninput="filterFAQ(this.value)">
+                    <svg class="w-6 h-6 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="space-y-6" id="faqContainer">
+                <!-- General Questions -->
+                <div class="faq-category">
+                    <h3 class="text-lg font-bold text-fls-navy mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-fls-orange text-white rounded-lg flex items-center justify-center mr-2 text-sm">G</span>
+                        General Questions
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">Can I earn both the Impact Bonus AND the Schoolwide Bonus?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>Yes! If you meet your individual performance targets AND your school achieves a 3+ point SPS increase, you can earn both bonuses. For example, a K-8 content teacher could earn up to <strong>$3,750</strong> ($3,000 Exceptional + $750 Schoolwide).</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">What happens if I'm on maternity/paternity leave?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>As long as your leave is paid leave (using your accrued PTO, sick time, or short-term disability), you remain eligible. Only unpaid leave disqualifies you from the bonus.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">What if I transfer schools mid-year?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>Teachers who transfer mid-year will have their performance evaluated based on students they taught for the majority of the school year. Contact your principal or HR for specific guidance on your situation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assessment Questions -->
+                <div class="faq-category">
+                    <h3 class="text-lg font-bold text-fls-navy mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-fls-blue text-white rounded-lg flex items-center justify-center mr-2 text-sm">A</span>
+                        Assessment Questions
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">What is a "band jump" on LEAP 2025?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>A band jump is when a student moves up one or more performance levels from their prior year's LEAP score. For example, moving from "Approaching Basic" to "Basic" or from "Basic" to "Mastery" counts as a band jump.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">What is "conditional growth" on MAP?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>Conditional growth measures whether students met their individual growth targets based on their starting point. A student at the 50th percentile for conditional growth has met their expected growth target given where they started.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">How is the DIBELS composite benchmark determined?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>The DIBELS composite combines scores from multiple subtests (letter naming fluency, phoneme segmentation, nonsense word fluency, oral reading fluency) into one overall score. Students are categorized as "at/above benchmark," "below benchmark," or "well below benchmark."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPED Questions -->
+                <div class="faq-category">
+                    <h3 class="text-lg font-bold text-fls-navy mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-fls-navy text-white rounded-lg flex items-center justify-center mr-2 text-sm">S</span>
+                        SPED Teacher Questions
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">What's the difference between Inclusion/Resource and Discovery?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p><strong>Inclusion/Resource:</strong> Teachers who support students with mild to moderate disabilities in general education settings or pull-out resource rooms. Students take standard DIBELS, MAP, and LEAP assessments.</p>
+                                <p class="mt-2"><strong>Discovery:</strong> Teachers who serve students with significant cognitive disabilities. Students take alternate assessments (DIBELS Alt, Unique Learning System, LEAP Connect).</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">Which students count toward my SPED bonus targets?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>Your bonus targets are based on the students on your caseload who you provide direct instruction to in ELA and/or Math. Students must be enrolled for the majority of the year and have valid pre/post assessment data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multiple Subjects -->
+                <div class="faq-category">
+                    <h3 class="text-lg font-bold text-fls-navy mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-fls-orange text-white rounded-lg flex items-center justify-center mr-2 text-sm">M</span>
+                        Multiple Subjects / Split Assignments
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">I teach both ELA and Math. How is my bonus calculated?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>If you teach multiple tested subjects (ELA and Math), your performance targets require meeting goals in BOTH subjects to qualify. Your bonus amount is based on whichever tier you achieve across all your subjects.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">I teach a tested and non-tested subject. Which targets apply?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>Your targets are determined by your primary teaching assignment. If you spend the majority of your time teaching a tested subject, those targets apply. Consult with your principal if your assignment is split evenly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enrichment Questions -->
+                <div class="faq-category">
+                    <h3 class="text-lg font-bold text-fls-navy mb-3 flex items-center">
+                        <span class="w-8 h-8 bg-fls-blue text-white rounded-lg flex items-center justify-center mr-2 text-sm">E</span>
+                        Enrichment Teacher Questions
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">Why are enrichment bonus amounts different?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>Enrichment teachers have different bonus amounts ($1,500 Exceptional / $750 Full) because their targets are based on programmatic outcomes rather than state standardized test scores. These targets focus on student engagement, skill development, and program quality.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-fls-light rounded-xl overflow-hidden border border-gray-200">
+                            <button class="w-full px-6 py-4 text-left font-medium flex items-center justify-between hover:bg-gray-100" onclick="toggleAccordion(this)">
+                                <span class="text-fls-navy">How is participation measured for concerts/performances?</span>
+                                <svg class="w-5 h-5 text-fls-orange transform transition-transform accordion-icon flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                                <p>Participation is calculated as the percentage of enrolled students who actively participate in the concert or performance. An 80% participation rate means at least 80% of your students perform. Documentation of attendance/participation is required.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section id="dates" class="py-16 bg-fls-navy text-white pattern-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Important Dates</h2>
+                <p class="text-gray-300 text-lg">Key dates and deadlines for the 2024-2025 school year</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Testing Windows -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <div class="text-fls-orange font-semibold text-sm uppercase tracking-wide mb-4">Testing Windows</div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="font-semibold">DIBELS/MAP</div>
+                            <div class="text-gray-300 text-sm">BOY: Aug-Sep | MOY: Jan | EOY: May</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">LEAP 2025</div>
+                            <div class="text-gray-300 text-sm">April - May 2026</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">ELPT</div>
+                            <div class="text-gray-300 text-sm">January - March 2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLASS Observations -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <div class="text-fls-orange font-semibold text-sm uppercase tracking-wide mb-4">CLASS (Pre-K)</div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="font-semibold">Observation Window</div>
+                            <div class="text-gray-300 text-sm">Throughout the year</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Final Scores</div>
+                            <div class="text-gray-300 text-sm">Averaged across all observations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Release -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <div class="text-fls-orange font-semibold text-sm uppercase tracking-wide mb-4">Data Release</div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="font-semibold">LEAP Scores</div>
+                            <div class="text-gray-300 text-sm">Late Summer 2026</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Bonus Eligibility Notification</div>
+                            <div class="text-gray-300 text-sm">Fall 2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payout -->
+                <div class="bg-fls-orange rounded-2xl p-6 shadow-xl">
+                    <div class="text-white/80 font-semibold text-sm uppercase tracking-wide mb-4">Bonus Payout</div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="text-4xl font-bold">December 15</div>
+                            <div class="text-white/80">2026</div>
+                        </div>
+                        <div class="text-sm text-white/80">
+                            Must be employed on this date to receive bonus
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employment Reminder -->
+            <div class="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-3xl mx-auto text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-fls-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-xl font-semibold">Return Commitment Required</span>
+                </div>
+                <p class="text-gray-300">To receive your bonus, you must commit to remaining with the FirstLine Schools network for the following school year. Teachers who resign or are terminated before completing the subsequent year may be required to repay a portion of the bonus.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-12 h-12 bg-fls-orange rounded-lg flex items-center justify-center font-bold text-xl">FL</div>
+                    <span class="text-2xl font-bold">FirstLine Schools</span>
+                </div>
+                <p class="text-gray-400 mb-6">Education For Life</p>
+                <div class="text-sm text-gray-500">
+                    <p>Questions about the Impact Bonus? Contact your principal or HR representative.</p>
+                    <p class="mt-2">&copy; 2026 FirstLine Schools. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-fls-orange text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all hover:bg-fls-orange-dark z-40" onclick="scrollToTop()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script>
+        // Role Data
+        const roleData = {
+            general: {
+                name: 'General Education',
+                roles: [
+                    { id: 'k-gen', name: 'Kindergarten (ELA/Math)', icon: '🎒' },
+                    { id: 'g1-2-gen', name: 'Grades 1-2 (ELA/Math)', icon: '📖' },
+                    { id: 'g3-elamath', name: '3rd Grade (ELA/Math)', icon: '📝' },
+                    { id: 'g3-scisoc', name: '3rd Grade (Science/Social Studies)', icon: '🔬' },
+                    { id: 'g4-8-elamath', name: 'Grades 4-8 (ELA/Math)', icon: '📊' },
+                    { id: 'g4-8-scisoc', name: 'Grades 4-8 (Science/Social Studies)', icon: '🌍' },
+                    { id: 'algebra', name: 'Algebra', icon: '🔢' },
+                    { id: 'ell', name: 'ELL Teacher (K-8)', icon: '🌐' }
+                ]
+            },
+            sped: {
+                name: 'Special Education',
+                roles: [
+                    { id: 'k2-sped-inc', name: 'K-2 SPED Inclusion/Resource', icon: '⭐' },
+                    { id: 'k2-sped-disc', name: 'K-2 SPED Discovery', icon: '💫' },
+                    { id: 'g3-4-sped-inc', name: 'Grades 3-4 SPED Inclusion/Resource', icon: '🌟' },
+                    { id: 'g5-8-sped-inc', name: 'Grades 5-8 SPED Inclusion/Resource', icon: '✨' },
+                    { id: 'g3-8-sped-disc', name: 'Grades 3-8 SPED Discovery', icon: '🌠' }
+                ]
+            },
+            enrichment: {
+                name: 'Enrichment',
+                roles: [
+                    { id: 'band', name: 'Band (Ashe, LHA)', icon: '🎺' },
+                    { id: 'music', name: 'Music (Wheatley)', icon: '🎵' },
+                    { id: 'dance', name: 'Dance (Ashe)', icon: '💃' },
+                    { id: 'art', name: 'Art (Ashe, LHA, Green)', icon: '🎨' },
+                    { id: 'media', name: 'Media (Ashe)', icon: '📹' },
+                    { id: 'tech', name: 'Technology (Wheatley, LHA, Green)', icon: '💻' },
+                    { id: 'lifeskills', name: 'Life Skills (Wheatley)', icon: '🧠' },
+                    { id: 'pe', name: 'P.E. (All Schools)', icon: '⚽' },
+                    { id: 'adaptive-pe', name: 'Adaptive P.E.', icon: '🏃' },
+                    { id: 'spanish', name: 'Spanish (Ashe, Wheatley)', icon: '🇪🇸' }
+                ]
+            },
+            other: {
+                name: 'Other Roles',
+                roles: [
+                    { id: 'prek', name: 'Pre-K Teacher', icon: '🧒' },
+                    { id: 'esy-garden', name: 'ESY Garden', icon: '🌱' },
+                    { id: 'esy-kitchen', name: 'ESY Kitchen', icon: '👨‍🍳' }
+                ]
+            }
+        };
+
+        // Bonus Targets Data
+        const bonusTargets = {
+            'k-gen': {
+                title: 'Kindergarten General Ed (ELA/Math)',
+                assessment: 'DIBELS (ELA) + NWEA MAP (Math)',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        '60% of students reach DIBELS composite benchmark',
+                        '45% reach 50th percentile on MAP Math OR 50% meet conditional growth at 50th percentile'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        '75% of students reach DIBELS composite benchmark',
+                        '55% reach 50th percentile on MAP Math OR 65% meet conditional growth at 50th percentile'
+                    ]
+                }
+            },
+            'g1-2-gen': {
+                title: 'Grades 1-2 General Ed (ELA/Math)',
+                assessment: 'DIBELS (ELA) + NWEA MAP (Math)',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'Increase DIBELS At/Above by 10% OR increase DIBELS growth by 10%',
+                        '45% reach 50th percentile on MAP Math OR 50% meet conditional growth'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'Increase DIBELS At/Above by 15% OR increase DIBELS growth by 15%',
+                        '55% reach 50th percentile on MAP Math OR 65% meet conditional growth'
+                    ]
+                }
+            },
+            'g3-elamath': {
+                title: '3rd Grade General Ed (ELA/Math)',
+                assessment: 'LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        '35% of students achieve Mastery or Advanced on LEAP 2025'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        '40% of students achieve Mastery or Advanced on LEAP 2025'
+                    ]
+                }
+            },
+            'g3-scisoc': {
+                title: '3rd Grade General Ed (Science/Social Studies)',
+                assessment: 'LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'Increase mastery year-over-year by 10%',
+                        'OR exceed state average'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'Increase mastery year-over-year by 15%',
+                        'OR exceed state average by 5%+'
+                    ]
+                }
+            },
+            'g4-8-elamath': {
+                title: 'Grades 4-8 General Ed (ELA/Math)',
+                assessment: 'LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'Increase cohort mastery by 10%',
+                        'OR 60% of students achieve a band jump'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'Increase cohort mastery by 15%',
+                        'OR 70% of students achieve a band jump'
+                    ]
+                }
+            },
+            'g4-8-scisoc': {
+                title: 'Grades 4-8 General Ed (Science/Social Studies)',
+                assessment: 'LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'Increase mastery by 10% across BOTH Science and Social Studies'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'Increase mastery by 15% across BOTH Science and Social Studies'
+                    ]
+                }
+            },
+            'algebra': {
+                title: 'Algebra',
+                assessment: 'LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'Increase 8th grade Math mastery by 10%',
+                        '80% of Algebra students achieve Mastery'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'Increase 8th grade Math mastery by 15%',
+                        '90% of Algebra students achieve Mastery'
+                    ]
+                }
+            },
+            'k2-sped-inc': {
+                title: 'K-2 SPED Inclusion/Resource',
+                assessment: 'DIBELS (ELA) + NWEA MAP (Math)',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'K: 60% reach LNF benchmark | Grades 1-2: Increase DIBELS growth by 10%',
+                        '40% reach 50th percentile on MAP Math OR 50% meet conditional growth'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'K: 75% reach LNF benchmark | Grades 1-2: Increase DIBELS growth by 15%',
+                        '50% reach 50th percentile on MAP Math OR 65% meet conditional growth'
+                    ]
+                }
+            },
+            'k2-sped-disc': {
+                title: 'K-2 SPED Discovery (Cognitive Disabilities)',
+                assessment: 'DIBELS/Alt + Unique Learning System',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'K: 60% reach LNF benchmark | Grades 1-2: Increase DIBELS growth by 10%',
+                        '50% of students move one level on 75% of Unique Math standards'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'K: 75% reach LNF benchmark | Grades 1-2: Increase DIBELS growth by 15%',
+                        '65% of students move one level on 75% of Unique Math standards'
+                    ]
+                }
+            },
+            'g3-4-sped-inc': {
+                title: 'Grades 3-4 SPED Inclusion/Resource',
+                assessment: 'LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        '35% achieve Mastery on LEAP',
+                        'Increase mastery by 10% OR 60% achieve band jump'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        '40% achieve Mastery on LEAP',
+                        'Increase mastery by 15% OR 70% achieve band jump'
+                    ]
+                }
+            },
+            'g5-8-sped-inc': {
+                title: 'Grades 5-8 SPED Inclusion/Resource',
+                assessment: 'LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        'Increase mastery by 10%',
+                        'OR 60% of students achieve a band jump'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        'Increase mastery by 15%',
+                        'OR 70% of students achieve a band jump'
+                    ]
+                }
+            },
+            'g3-8-sped-disc': {
+                title: 'Grades 3-8 SPED Discovery',
+                assessment: 'LEAP Connect / LEAP 2025',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        '50% achieve LEAP Connect score of 3+',
+                        'OR 60% achieve band jump on LEAP 2025'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        '65% achieve LEAP Connect score of 3+',
+                        'OR 70% achieve band jump on LEAP 2025'
+                    ]
+                }
+            },
+            'ell': {
+                title: 'ELL Teachers (K-8)',
+                assessment: 'ELPT',
+                bonusType: 'content',
+                full: {
+                    amount: '$1,500',
+                    targets: [
+                        '35% of students meet their trajectory goal',
+                        '45% of baseline students grow one domain level'
+                    ]
+                },
+                exceptional: {
+                    amount: '$3,000',
+                    targets: [
+                        '40% of students meet their trajectory goal',
+                        '50% of baseline students grow one domain level'
+                    ]
+                }
+            },
+            'prek': {
+                title: 'Pre-K Teachers',
+                assessment: 'CLASS Observations',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        'Average CLASS score of 5.0 - 5.9'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        'Average CLASS score of 6.0 or higher'
+                    ]
+                }
+            },
+            'band': {
+                title: 'Band (Ashe, LHA)',
+                assessment: 'Program Performance',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '2 concerts with 80% student participation',
+                        'Students audition for LMEA Honor Band'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '3 concerts with 80% student participation',
+                        'At least one student accepted to LMEA Honor Band'
+                    ]
+                }
+            },
+            'music': {
+                title: 'Music (Wheatley)',
+                assessment: 'Program Performance',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '2 concerts with 80% student participation',
+                        'Students demonstrate proficiency on 3 instrument types'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '3 concerts with 80% student participation',
+                        'Students demonstrate proficiency on 3 instrument types'
+                    ]
+                }
+            },
+            'dance': {
+                title: 'Dance (Ashe)',
+                assessment: 'Program Performance',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '2 performances with 80% student participation',
+                        'Students demonstrate proficiency in 2 dance genres'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '3 performances with 80% student participation',
+                        'Students demonstrate proficiency in 2 dance genres'
+                    ]
+                }
+            },
+            'art': {
+                title: 'Art (Ashe, LHA, Green)',
+                assessment: 'Program Performance',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '2 art shows',
+                        'Student pieces entered in outside competition'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '3 art shows',
+                        'At least one student piece accepted to outside competition'
+                    ]
+                }
+            },
+            'media': {
+                title: 'Media (Ashe)',
+                assessment: 'Program Performance',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '2 cross-curricular projects completed',
+                        'Peer feedback sessions each trimester'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '3 student-centered projects completed',
+                        '80% of students achieve proficiency on media rubric'
+                    ]
+                }
+            },
+            'tech': {
+                title: 'Technology (Wheatley, LHA, Green)',
+                assessment: 'Hello World Assessment',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '80% of students pass "Hello World" assessment'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '85% of students pass "Hello World" assessment'
+                    ]
+                }
+            },
+            'lifeskills': {
+                title: 'Life Skills (Wheatley)',
+                assessment: 'Overcoming Obstacles Assessment',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '80% of students pass "Overcoming Obstacles" assessment'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '85% of students pass "Overcoming Obstacles" assessment'
+                    ]
+                }
+            },
+            'pe': {
+                title: 'P.E. (All Schools)',
+                assessment: 'Fitness Gram',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        'Complete Fall Fitness Gram (60% of students tested)',
+                        '50% of students meet Spring fitness goals'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        'Complete Fall Fitness Gram (75% of students tested)',
+                        '65% of students meet Spring fitness goals'
+                    ]
+                }
+            },
+            'adaptive-pe': {
+                title: 'Adaptive P.E.',
+                assessment: 'Adaptive PE SLT Goals',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '50% of students meet Adaptive PE SLT goals'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '65% of students meet Adaptive PE SLT goals'
+                    ]
+                }
+            },
+            'spanish': {
+                title: 'Spanish (Ashe, Wheatley)',
+                assessment: 'Curriculum-Based Measure',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '80% of students pass curriculum-based measure'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '85% of students pass curriculum-based measure'
+                    ]
+                }
+            },
+            'esy-garden': {
+                title: 'ESY Garden',
+                assessment: 'Program Rubric',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '2 family events meeting criteria',
+                        '"Meets expectations" on program rubric'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '4 family events meeting criteria',
+                        '"Meets expectations" on program rubric'
+                    ]
+                }
+            },
+            'esy-kitchen': {
+                title: 'ESY Kitchen',
+                assessment: 'Program Rubric',
+                bonusType: 'enrichment',
+                full: {
+                    amount: '$750',
+                    targets: [
+                        '2 family events meeting criteria',
+                        '"Meets expectations" on program rubric'
+                    ]
+                },
+                exceptional: {
+                    amount: '$1,500',
+                    targets: [
+                        '4 family events meeting criteria',
+                        '"Meets expectations" on program rubric'
+                    ]
+                }
+            }
+        };
+
+        let selectedCategory = null;
+        let selectedRole = null;
+
+        function selectCategory(category) {
+            selectedCategory = category;
+            selectedRole = null;
+
+            // Update category buttons
+            document.querySelectorAll('#categorySelector .role-option').forEach(btn => {
+                btn.classList.remove('selected');
+                if (btn.dataset.category === category) {
+                    btn.classList.add('selected');
+                }
+            });
+
+            // Show role selector
+            const roleSelector = document.getElementById('roleSelector');
+            const roleOptions = document.getElementById('roleOptions');
+            roleSelector.classList.remove('hidden');
+
+            // Populate roles
+            const roles = roleData[category].roles;
+            roleOptions.innerHTML = roles.map(role => `
+                <button onclick="selectRole('${role.id}')" class="role-option px-4 py-3 bg-white border-2 border-gray-200 rounded-xl text-left font-medium shadow-sm flex items-center" data-role="${role.id}">
+                    <span class="text-2xl mr-3">${role.icon}</span>
+                    <span class="text-fls-navy">${role.name}</span>
+                </button>
+            `).join('');
+
+            // Hide results
+            document.getElementById('bonusResults').classList.add('hidden');
+        }
+
+        function selectRole(roleId) {
+            selectedRole = roleId;
+
+            // Update role buttons
+            document.querySelectorAll('#roleOptions .role-option').forEach(btn => {
+                btn.classList.remove('selected');
+                if (btn.dataset.role === roleId) {
+                    btn.classList.add('selected');
+                }
+            });
+
+            // Show results
+            showBonusResults(roleId);
+        }
+
+        function showBonusResults(roleId) {
+            const data = bonusTargets[roleId];
+            if (!data) return;
+
+            const resultsDiv = document.getElementById('bonusResults');
+            resultsDiv.classList.remove('hidden');
+            resultsDiv.classList.add('fade-in');
+
+            resultsDiv.innerHTML = `
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+                    <div class="bg-fls-navy text-white p-6">
+                        <h3 class="text-2xl font-bold">${data.title}</h3>
+                        <p class="text-gray-300 mt-1">Assessment: ${data.assessment}</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-0">
+                        <!-- Exceptional -->
+                        <div class="p-6 bg-gradient-to-br from-orange-50 to-orange-100/50 border-r border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-4 py-1 bg-fls-orange text-white text-sm font-bold rounded-full uppercase tracking-wide">Exceptional</span>
+                                <span class="text-3xl font-bold text-fls-navy">${data.exceptional.amount}</span>
+                            </div>
+                            <ul class="space-y-3">
+                                ${data.exceptional.targets.map(t => `
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-fls-orange mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-gray-700">${t}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <!-- Full Attainment -->
+                        <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100/50">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-4 py-1 bg-fls-blue text-white text-sm font-bold rounded-full uppercase tracking-wide">Full Attainment</span>
+                                <span class="text-3xl font-bold text-fls-navy">${data.full.amount}</span>
+                            </div>
+                            <ul class="space-y-3">
+                                ${data.full.targets.map(t => `
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-fls-blue mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span class="text-gray-700">${t}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-fls-navy/5 border-t border-gray-200">
+                        <div class="flex items-center text-fls-navy">
+                            <svg class="w-5 h-5 mr-2 text-fls-orange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold">Additional Opportunity:</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1 ml-7">+ <strong>$750 Schoolwide Bonus</strong> if your school achieves a 3+ point SPS increase</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-5 bg-fls-orange/10 rounded-xl border border-fls-orange/20">
+                    <h4 class="font-bold text-fls-navy mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-fls-orange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        Remember: You Must Also Meet Eligibility Requirements
+                    </h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                        <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> PMAP 2.5+</div>
+                        <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> No unpaid leave</div>
+                        <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> Employed Dec 15</div>
+                        <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> Return commitment</div>
+                    </div>
+                </div>
+            `;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.accordion-icon');
+            const isOpen = content.classList.contains('open');
+
+            // Close all other accordions in the same category
+            const category = button.closest('.faq-category');
+            category.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+            category.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('rotate-180'));
+
+            if (!isOpen) {
+                content.classList.add('open');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // FAQ Search
+        function filterFAQ(query) {
+            const items = document.querySelectorAll('.faq-item');
+            const categories = document.querySelectorAll('.faq-category');
+            query = query.toLowerCase();
+
+            if (!query) {
+                items.forEach(item => item.style.display = 'block');
+                categories.forEach(cat => cat.style.display = 'block');
+                return;
+            }
+
+            categories.forEach(category => {
+                let hasVisible = false;
+                category.querySelectorAll('.faq-item').forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                        item.style.display = 'block';
+                        hasVisible = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                category.style.display = hasVisible ? 'block' : 'none';
+            });
+        }
+
+        // Mobile menu
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Back to top button
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                btn.classList.remove('opacity-0', 'invisible');
+                btn.classList.add('opacity-100', 'visible');
+            } else {
+                btn.classList.add('opacity-0', 'invisible');
+                btn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
