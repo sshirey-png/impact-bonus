@@ -32,8 +32,8 @@
         html { scroll-behavior: smooth; }
         .bonus-card { transition: all 0.3s ease; }
         .bonus-card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-content.open { max-height: 2000px; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; padding-top: 0; padding-bottom: 0; }
+        .accordion-content.open { max-height: 2000px; padding-top: 0; padding-bottom: 1rem; }
         .role-option { transition: all 0.2s ease; }
         .role-option:hover { background-color: #fff4ed; border-color: #e47727; }
         .role-option.selected { background-color: #e47727; color: white; border-color: #e47727; }
@@ -178,13 +178,7 @@
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                     </svg>
-                    <span>Employed Dec 15</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                    </svg>
-                    <span>Return Next Year</span>
+                    <span>Employed with FLS on payout day</span>
                 </div>
             </div>
         </div>
@@ -302,21 +296,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <strong class="text-fls-navy">Employed on bonus payout day</strong>
-                                    <p class="text-sm text-gray-600 mt-1">Must be employed on or before December 15</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                            <div class="flex items-start">
-                                <div class="w-6 h-6 bg-fls-orange rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <strong class="text-fls-navy">Return commitment</strong>
-                                    <p class="text-sm text-gray-600 mt-1">Must remain with the network for the following school year</p>
+                                    <strong class="text-fls-navy">Employed with FLS on payout day</strong>
+                                    <p class="text-sm text-gray-600 mt-1">Must be employed with FirstLine Schools on bonus payout day</p>
                                 </div>
                             </div>
                         </div>
@@ -538,7 +519,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>Yes! If you meet your individual performance targets AND your school achieves a 3+ point SPS increase, you can earn both bonuses. For example, a K-8 content teacher could earn up to <strong>$3,750</strong> ($3,000 Exceptional + $750 Schoolwide).</p>
                             </div>
                         </div>
@@ -549,7 +530,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>As long as your leave is paid leave (using your accrued PTO, sick time, or short-term disability), you remain eligible. Only unpaid leave disqualifies you from the bonus.</p>
                             </div>
                         </div>
@@ -560,7 +541,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>Teachers who transfer mid-year will have their performance evaluated based on students they taught for the majority of the school year. Contact your principal or HR for specific guidance on your situation.</p>
                             </div>
                         </div>
@@ -581,7 +562,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>A band jump is when a student moves up one or more performance levels from their prior year's LEAP score. For example, moving from "Approaching Basic" to "Basic" or from "Basic" to "Mastery" counts as a band jump.</p>
                             </div>
                         </div>
@@ -592,7 +573,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>Conditional growth measures whether students met their individual growth targets based on their starting point. A student at the 50th percentile for conditional growth has met their expected growth target given where they started.</p>
                             </div>
                         </div>
@@ -603,7 +584,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>The DIBELS composite combines scores from multiple subtests (letter naming fluency, phoneme segmentation, nonsense word fluency, oral reading fluency) into one overall score. Students are categorized as "at/above benchmark," "below benchmark," or "well below benchmark."</p>
                             </div>
                         </div>
@@ -624,7 +605,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p><strong>Inclusion/Resource:</strong> Teachers who support students with mild to moderate disabilities in general education settings or pull-out resource rooms. Students take standard DIBELS, MAP, and LEAP assessments.</p>
                                 <p class="mt-2"><strong>Discovery:</strong> Teachers who serve students with significant cognitive disabilities. Students take alternate assessments (DIBELS Alt, Unique Learning System, LEAP Connect).</p>
                             </div>
@@ -636,7 +617,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>Your bonus targets are based on the students on your caseload who you provide direct instruction to in ELA and/or Math. Students must be enrolled for the majority of the year and have valid pre/post assessment data.</p>
                             </div>
                         </div>
@@ -657,7 +638,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>If you teach multiple tested subjects (ELA and Math), your performance targets require meeting goals in BOTH subjects to qualify. Your bonus amount is based on whichever tier you achieve across all your subjects.</p>
                             </div>
                         </div>
@@ -668,7 +649,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>Your targets are determined by your primary teaching assignment. If you spend the majority of your time teaching a tested subject, those targets apply. Consult with your principal if your assignment is split evenly.</p>
                             </div>
                         </div>
@@ -689,7 +670,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>Enrichment teachers have different bonus amounts ($1,500 Exceptional / $750 Full) because their targets are based on programmatic outcomes rather than state standardized test scores. These targets focus on student engagement, skill development, and program quality.</p>
                             </div>
                         </div>
@@ -700,7 +681,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div class="accordion-content px-6 pb-4 text-gray-600">
+                            <div class="accordion-content px-6 text-gray-600">
                                 <p>Participation is calculated as the percentage of enrolled students who actively participate in the concert or performance. An 80% participation rate means at least 80% of your students perform. Documentation of attendance/participation is required.</p>
                             </div>
                         </div>
@@ -715,7 +696,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Important Dates</h2>
-                <p class="text-gray-300 text-lg">Key dates and deadlines for the 2024-2025 school year</p>
+                <p class="text-gray-300 text-lg">Key dates and deadlines for the 2025-2026 school year</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -791,7 +772,7 @@
                     </svg>
                     <span class="text-xl font-semibold">Return Commitment Required</span>
                 </div>
-                <p class="text-gray-300">To receive your bonus, you must commit to remaining with the FirstLine Schools network for the following school year. Teachers who resign or are terminated before completing the subsequent year may be required to repay a portion of the bonus.</p>
+                <p class="text-gray-300">To receive your bonus, you must commit to remaining with the FirstLine Schools network for the following school year.</p>
             </div>
         </div>
     </section>
@@ -973,13 +954,13 @@
                 full: {
                     amount: '$1,500',
                     targets: [
-                        'Increase mastery by 10% across BOTH Science and Social Studies'
+                        'Increase the percent of students served scoring mastery by 10% across both subjects and/or both grades'
                     ]
                 },
                 exceptional: {
                     amount: '$3,000',
                     targets: [
-                        'Increase mastery by 15% across BOTH Science and Social Studies'
+                        'Increase the percent of students served scoring mastery by 15% across both subjects and/or both grades'
                     ]
                 }
             },
@@ -1477,8 +1458,7 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
                         <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> PMAP 2.5+</div>
                         <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> No unpaid leave</div>
-                        <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> Employed Dec 15</div>
-                        <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> Return commitment</div>
+                        <div class="flex items-center bg-white px-3 py-2 rounded-lg"><span class="text-fls-orange mr-2 font-bold">✓</span> Employed with FLS on payout day</div>
                     </div>
                 </div>
             `;
